@@ -1,4 +1,4 @@
--- Create the database
+/*-- Create the database
 CREATE DATABASE ddl_checkpoint_db;
 USE ddl_checkpoint_db;
 
@@ -22,7 +22,7 @@ CREATE TABLE orders (
     order_id INT PRIMARY KEY AUTO_INCREMENT,
     customer_id VARCHAR(20),
     product_id VARCHAR(20),
-    order_date DATE DEFAULT CURDATE(), -- because sysdate does'nt work here
+    order_date DATE,
     quantity INT CHECK (quantity > 0),
     total_amount INT CHECK (total_amount > 0),
     FOREIGN KEY (customer_id) REFERENCES customer(customer_id),
@@ -39,6 +39,17 @@ INSERT INTO customer VALUES
 ('CO2', 'ASMA', '77345823');
 
 -- Inserting values into the orders table
-INSERT INTO orders (customer_id, product_id, order_date, quantity, total_amount) VALUES
+INSERT INTO orders (customer_id, product_id, order_date, quantity, total_amount)
+VALUES
 ('CO1', 'P01', NULL, 2, 9198),
-('CO2', 'P02', '2020-05-28', 1, 3299);
+('CO2', 'P02', '2020-05-28', 1, 3299); 
+
+*/
+
+
+
+
+
+
+
+
